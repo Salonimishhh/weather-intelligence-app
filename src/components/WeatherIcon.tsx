@@ -1,0 +1,93 @@
+import React from 'react';
+import {
+  Sun,
+  SunMedium,
+  CloudSun,
+  Cloud,
+  CloudFog,
+  CloudDrizzle,
+  CloudRain,
+  CloudRainWind,
+  CloudSnow,
+  Snowflake,
+  CloudLightning,
+  Wind,
+  Compass,
+  Droplets,
+  Eye,
+  Gauge,
+  Thermometer,
+  Umbrella,
+  Shirt,
+  Heart,
+  Home,
+  Footprints,
+  MapPin,
+  Search,
+  Check,
+  Star,
+  RefreshCw,
+  AlertTriangle,
+  Info,
+  CheckCircle2,
+  Calendar,
+  Clock,
+  TrendingUp,
+  ArrowUp,
+  ArrowDown,
+  Navigation,
+  Sparkles,
+  Zap,
+  LucideProps
+} from 'lucide-react';
+
+const iconMap: Record<string, React.ComponentType<LucideProps>> = {
+  Sun,
+  SunMedium,
+  CloudSun,
+  Cloud,
+  CloudFog,
+  CloudDrizzle,
+  CloudRain,
+  CloudRainWind,
+  CloudSnow,
+  Snowflake,
+  CloudLightning,
+  Wind,
+  Compass,
+  Droplets,
+  Eye,
+  Gauge,
+  Thermometer,
+  Umbrella,
+  Shirt,
+  Jacket: Shirt, // Lucide doesn't have Jacket, fallback to Shirt with appropriate styling
+  Heart,
+  Home,
+  Footprints,
+  MapPin,
+  Search,
+  Check,
+  Star,
+  RefreshCw,
+  AlertTriangle,
+  Info,
+  CheckCircle2,
+  Calendar,
+  Clock,
+  TrendingUp,
+  ArrowUp,
+  ArrowDown,
+  Navigation,
+  Sparkles,
+  Zap,
+};
+
+interface WeatherIconProps extends LucideProps {
+  name: string;
+}
+
+export const WeatherIcon: React.FC<WeatherIconProps> = ({ name, ...props }) => {
+  const IconComponent = iconMap[name] || Cloud;
+  return <IconComponent {...props} />;
+};

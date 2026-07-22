@@ -1,0 +1,10 @@
+{
+  "name": "Weather Intelligence",
+  "description": "Interactive weather dashboard providing real-time forecasts, 7-day trends, and personalized activity recommendations using Open-Meteo APIs.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
